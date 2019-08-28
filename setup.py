@@ -21,7 +21,7 @@ import os
 import platform
 import sys
 
-from distutils.core import setup
+from setuptools import setup
 
 sys.path.insert(1, os.path.abspath('./src'))
 
@@ -51,6 +51,7 @@ setup(
     classifiers=wixpy.CLASSIFIERS,
     packages=['wixpy'],
     package_dir={'wixpy': 'src/wixpy'},
+    install_requires=['future'],
     scripts=scripts,
 )
 

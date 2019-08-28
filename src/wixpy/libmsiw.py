@@ -19,7 +19,8 @@
 
 import os
 import _msi
-
+from builtins import int
+from past.builtins import basestring
 
 class SummaryInfo(object):
     title = None
@@ -82,7 +83,7 @@ class Table(object):
         for record in self.records:
             for i in range(count):
                 field = record[i]
-                if isinstance(field, (int, long)):
+                if isinstance(field, int):
                     msirec.SetInteger(i + 1, field)
                 elif isinstance(field, basestring):
                     msirec.SetString(i + 1, field)
